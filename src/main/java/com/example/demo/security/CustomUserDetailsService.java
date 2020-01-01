@@ -39,7 +39,7 @@ public class CustomUserDetailsService  implements UserDetailsService {
 				credentialsNonExpired, 
 				accountNonLocked, 
 				getAuthorities(user.getRoles()));
-		return null;
+		return userDetails;
 	}
 	
 	public Collection<? extends GrantedAuthority> getAuthorities(List<Role> roles) {

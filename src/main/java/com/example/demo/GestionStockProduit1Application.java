@@ -26,17 +26,17 @@ public class GestionStockProduit1Application {//extends SpringBootServletInitial
 		
 		ProduitRepository produitRepository = cxt.getBean(ProduitRepository.class);
 		
-	/*	produitRepository.save(new Produit("Livre", 50, 20)); 
+		/*produitRepository.save(new Produit("Livre", 50, 20)); 
 		produitRepository.save(new Produit("Cahier", 200, 5.25f)); 
-		produitRepository.save(new Produit("Stylo", 500, 2.10f)); 
-		*/
+		produitRepository.save(new Produit("Stylo", 500, 2.10f)); */
+		
 		
 		RoleRepository roleRepository = cxt.getBean(RoleRepository.class);
 		Role roleUser = new Role(RoleEnum.ROLE_USER);
 		Role roleAdmin = new Role(RoleEnum.ROLE_ADMIN);
 		
 		//roleRepository.save(roleUser);
-		roleRepository.save(roleAdmin);
+		//roleRepository.save(roleAdmin);
 		
 		UserRepository userRepository = cxt.getBean(UserRepository.class);
 		
@@ -47,7 +47,7 @@ public class GestionStockProduit1Application {//extends SpringBootServletInitial
 		
 		
 		User admin = new User("admin", "password1", true);	
-		user.setRoles(Arrays.asList(roleUser, roleAdmin));
+		admin.setRoles(Arrays.asList(roleUser, roleAdmin));
 		
 		//userRepository.save(admin);
 	}
