@@ -1,4 +1,4 @@
-package com.example.demo.service;
+package com.example.demo.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,8 +6,9 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.entity.Produit;
+import com.example.demo.service.ICrudService;
 @Service
-public class ProduitMockServiceImpl implements IProduitService{
+public class ProduitMockServiceImpl implements ICrudService<Produit, Long>{
 	private List<Produit> produits;
 
 	public ProduitMockServiceImpl() {
@@ -18,29 +19,34 @@ public class ProduitMockServiceImpl implements IProduitService{
 		produits.add(new Produit("Stylo", 500, 2.10f)); 
 	}
 	@Override
-	public List<Produit> getProduit() {
+	public List<Produit> getAll() {
 		
 		return produits;
 	}
 
 	@Override
-	public void addProduit(Produit produit) {
+	public void add(Produit produit) {
 		produits.add(produit);
 		
 	}
 
 	@Override
-	public void updateProduit(Produit produit) {
+	public void update(Produit produit) {
 		produits.remove(produit);
 		produits.add(produit);
 		
 	}
 
 	@Override
-	public void deletProduit(Long id) {
+	public void delet(Long id) {
 		Produit produit =new Produit();
 		produit.setId(id);
 		produits.remove(produit);
+		
+	}
+	@Override
+	public void saveAll(Iterable<Produit> iterable) {
+		// TODO Auto-generated method stub
 		
 	}
 
