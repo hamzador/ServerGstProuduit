@@ -1,7 +1,5 @@
 package com.example.demo.entity;
 
-
-
 import java.util.List;
 
 import javax.persistence.Column;
@@ -21,6 +19,9 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY.AUTO )
 	@Column(name = "USER_ID")
 	private Long id;
+	
+	private String firstName;
+	private String lastName;
 	
 	@Column(unique = true)//username unique
 	private String username;
@@ -51,6 +52,20 @@ public class User {
 		this.username = username;
 		this.password = password;
 		this.enable = enable;
+	}
+
+
+	
+	
+	public User(String firstName, String lastName, String username, String password, Boolean enable,
+			List<Role> roles) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.username = username;
+		this.password = password;
+		this.enable = enable;
+		this.roles = roles;
 	}
 
 
@@ -129,7 +144,28 @@ public class User {
 	public void setRoles(List<Role> roles) {
 		this.roles = roles;
 	}
-		
+
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+
+	public String getLastName() {
+		return lastName;
+	}
+
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	
+	
 	
 	
 
