@@ -1,5 +1,6 @@
 package com.example.demo.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,9 +12,14 @@ public class Produit {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
+	@Column(unique = true)//username unique
 	private String ref;
+	
 	private int quantite;
+	
 	private float prixUnitaire;
+	
 	public Produit() {
 		super();
 	}

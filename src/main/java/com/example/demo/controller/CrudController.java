@@ -40,5 +40,4 @@ public class CrudController<T, ID> {
 		service.delet(id);
 		
 	}
-
 }

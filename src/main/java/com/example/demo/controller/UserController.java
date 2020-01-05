@@ -16,4 +16,8 @@ public class UserController {
 	public Principal user(Principal user) {
 		return user;
 	}
+	
+	
+	
+	
 }
